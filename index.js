@@ -16,7 +16,7 @@ inquirer
     {
         type: "input",
         name: 'contents',
-        message: 'Contents of your projecct:',
+        message: 'Hit enter key to auto generate Table of Contents of your projecct:',
     },
     {
         type: "input",
