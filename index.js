@@ -41,8 +41,8 @@ inquirer
     },
   ])
   .then(answers => {
-    var results = `#Title: ${answers.title}\n#Description: ${answers.description}\n###Table of Contents: ${answers.contents}\n#Description: ${answers.description}\n#Installation: ${answers.installation}\n#Usage: ${answers.usage}`
-    fs.writeFile("README.md", results, function(err) {
+    var results = `#Title: ${answers.title}\n#Description: ${answers.description}\n###Table of Contents: ${answers.contents}\n###Description: ${answers.description}\n###Installation: ${answers.installation}\n###Usage: ${answers.usage}`
+    fs.writeFile("sampleREADME.md", results, function(err) {
         if (err) {
           return console.log(err);
         }
