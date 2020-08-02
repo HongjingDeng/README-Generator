@@ -39,8 +39,43 @@ inquirer
         name: 'tests',
         message: 'Tests:',
     },
+    {
+        type: 'input',
+        message: "What is your Github username?",
+        name: 'user',
+        validate: user => {
+            if(user.length < 10){
+                return "Username is too short.";
+            }
+            else if(user.toLowerCase() != user){
+                return "Username should be lowercase.";
+            }
+            else{
+                // all validation checks passed
+                return true;
+            }
+        }
+    },
+    {
+        type: 'password',
+        message: 'Please enter your password',
+        name: 'august',
+        validate: august => {
+            if(august.length < 8){
+                return "Password is too short."
+            }
+            else if(august.length > 32){
+                return "Password is too long."
+            }
+            else{
+                return true;
+            }
+        }
+    }
   ])
   .then(answers => {
+    console.log(answers.user);
+    console.log(answers.august);
     var results = `#Title: ${answers.title}\n#Description: ${answers.description}\n###Table of Contents: ${answers.contents}\n###Description: ${answers.description}\n###Installation: ${answers.installation}\n###Usage: ${answers.usage}`
     fs.writeFile("sampleREADME.md", results, function(err) {
         if (err) {
