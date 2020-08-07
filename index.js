@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 var fs = require("fs");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 inquirer
   .prompt([
@@ -21,18 +22,17 @@ inquirer
     {
         type: "input",
         name: 'installation',
-        message: 'Installation of your projecct:',
+        message: 'Installation of your project:',
     },
     {
         type: "input",
         name: 'usage',
-        message: 'Usage of your projecct:',
+        message: 'Usage of your project:',
     },
-    //need liscence here
     {
         type: "input",
         name: 'contributing',
-        message: 'Contributing:',
+        message: 'Please add contributors',
     },
     {
         type: "input",
@@ -60,11 +60,11 @@ inquirer
         type: 'password',
         message: 'Please enter your password',
         name: 'august',
-        validate: august => {
-            if(august.length < 8){
+        validate: pwVali => {
+            if(pwVali.length < 8){
                 return "Password is too short."
             }
-            else if(august.length > 32){
+            else if(pwVali.length > 32){
                 return "Password is too long."
             }
             else{
@@ -75,9 +75,12 @@ inquirer
   ])
   .then(answers => {
     console.log(answers.user);
-    console.log(answers.august);
-    var results = `#Title: ${answers.title}\n#Description: ${answers.description}\n###Table of Contents: ${answers.contents}\n###Description: ${answers.description}\n###Installation: ${answers.installation}\n###Usage: ${answers.usage}`
-    fs.writeFile("sampleREADME.md", results, function(err) {
+    console.log(answers.pwVali);
+    generateMarkdown(answers);
+    const finishedMarkdown = profileWriter.generateMarkdown(answers);
+
+    //var results = `#Title: ${answers.title}\n#Description: ${answers.description}\n###Table of Contents: ${answers.contents}\n###Description: ${answers.description}\n###Installation: ${answers.installation}\n###Usage: ${answers.usage}`
+    fs.writeFile("sampleREADME.md", finishedMarkdown, function(err) {
         if (err) {
           return console.log(err);
         }
