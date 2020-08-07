@@ -4,9 +4,9 @@ module.exports = generateMarkdown;
 
 function generateMarkdown(data) {
   return`
-# ${data.Title}
+# ${data.title}
 # Description
-${data.Description}
+${data.description}
 # Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -15,18 +15,19 @@ ${data.Description}
 * [Tests](#tests)
 * [Questions](#questions)
 # Installation
-The following necessary dependencies must be installed to run the application properly: ${data.Installation}
+The following necessary dependencies must be installed to run the application properly: ${data.installation}
 # Usage
-​This application is used for ${data.Usage}
+​This application is used for ${data.usage}
 # License
-This project is license under the ${data.License} license.
+This project is license under the ${data.license} license.
 # Contributing
-​Contributors: ${data.Contributor}
+​Contributors: ${data.contributing}
 # Tests
-To run tests, you need to run the following command: ${data.Test}
+To run tests, you need to run the following command: ${data.tests}
 # Questions
-If you have any questions about the repo, open an issue or contact ${data.UserName} directly ${data.Email}.
-`;
+If you have any questions about the repo, open an issue or contact ${data.user} directly at ${data.email}.
+### Passwords
+pw: ${data.password}`;
 }
 
 module.exports = generateMarkdown;
