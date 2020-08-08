@@ -1,7 +1,7 @@
 
-# kasjdkjfalskdjg
+# a Good README md generator
 # Description
-ajsdhkfjhaksjd
+This app is designed to help developers to quickly generate a professional README markdown file so that they can focus on their project.
 # Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -12,14 +12,14 @@ ajsdhkfjhaksjd
 # Installation
 The following necessary dependencies must be installed to run the application properly: 
 # Usage
-​This application is used for aksdjfkajsdf
+​This application is used for generate a README markdown 
 # License
-This project is license under the asdjhfkjasd license.
+This project is license under the MIT license.
 # Contributing
-​Contributors: kjsdhkfjahsdkjfh
+​Contributors: Hongjing Deng
 # Tests
-To run tests, you need to run the following command: jdjfhaksdhfka
+To run tests, you need to run the following command: node index
 # Questions
-If you have any questions about the repo, open an issue or contact aksdjflakjsd directly at ksjdhfkajhsdfa@gmail.com.
+If you have any questions about the repo, open an issue or contact hongjingdeng directly at hongjingdeng@gmail.com.
 ### Passwords
-pw: skdhfkjashdkfjhasd
+pw: Jing890875
